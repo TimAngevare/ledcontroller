@@ -1,8 +1,13 @@
 import flask
 import board
 import controller
+from random import randint
 
 app = flask.Flask(__name__)
+
+def choose():
+    quotes = ["I love you", "you're cute", "My lover", "I need you", "I love you more", "Hey gorgeous",  "Hey beautifull", "Looking good!", "#1F496"]
+    return quotes[randint(0, len(quotes) - 1)]
 
 @app.route("/",  methods=["POST","GET"])
 def index():
