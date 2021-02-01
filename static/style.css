@@ -1,27 +1,45 @@
+* {
+  text-align: center;
+}
+
 .citaat {
   font-family: 'Kaushan Script', cursive;
   color: #2C363F;
   z-index: 1;
+  position: relative;
+  top: 150px;
 }
 
 .blob {
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
   z-index: -1;
-  size: 50%;
+  height: 500px;
+  width: 500px;
   position: absolute;
+  -webkit-transform: translateX(-10%);
 }
 
 .blob-1 {
-  top: 20%;
+  top: 0%;
 }
 
 .blob-2 {
   top: 50%;
 }
 .kiezer {
+  position: relative;
   z-index: 1;
 }
 
+.selector {
+    position: relative;
+    top: 400px;
+}
 .dropbtn {
+    position: relative;
+    left: 10;
     background-color: #718F94;
     color: black;
     padding: 16px;
