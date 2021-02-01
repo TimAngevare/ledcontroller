@@ -20,9 +20,9 @@ def index():
         elif "slide" in flask.request.form:
             controller.slide()
 
-        return flask.render_template("template.html", quote="choose()")
+        return flask.render_template("template.html", quote=choose())
     else:
-       return flask.render_template("template.html", quote="choose()")
+       return flask.render_template("template.html", quote=choose())
     
 if __name__ == "__main__":
     app.run(debug=True,  host="0.0.0.0")

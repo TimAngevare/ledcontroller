@@ -27,7 +27,6 @@ def slide():
                     pass
                 sleep(0.001)
                 if i >= x-1:
-                    print("done")
                     pixels[x] = color
                     pixels[x-1] = color
                     pixels[x-2] = color
