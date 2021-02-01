@@ -1,10 +1,19 @@
 .citaat {
   font-family: 'Kaushan Script', cursive;
-  color: #120078;
+  color: #2C363F;
+  z-index: 1;
+}
+
+.blob {
+  z-index: 0;
+}
+
+.kiezer {
+  z-index: 1;
 }
 
 .dropbtn {
-    background-color: #fecd1a;
+    background-color: #718F94;
     color: black;
     padding: 16px;
     font-size: 16px;
@@ -20,7 +29,7 @@
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: #2C363F;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -37,4 +46,4 @@
   
   .dropdown:hover .dropdown-content {display: block;}
   
-  .dropdown:hover .dropbtn {background-color: #9d0191;}
+  .dropdown:hover .dropbtn {background-color: #2C363F;}
