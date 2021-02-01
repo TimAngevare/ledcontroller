@@ -5,9 +5,18 @@
 }
 
 .blob {
-  z-index: 0;
+  z-index: -1;
+  size: 50%;
+  position: absolute;
 }
 
+.blob-1 {
+  top: 20%;
+}
+
+.blob-2 {
+  top: 50%;
+}
 .kiezer {
   z-index: 1;
 }
