@@ -1,8 +1,13 @@
 import flask
 import board
 import controller
+from random import randint
 
 app = flask.Flask(__name__)
+
+def choose():
+    quotes = ["I love you", "you're cute", "My lover", "I need you", "I love you more", "Hey gorgeous",  "Hey beautifull", "Looking good!", "#1F496"]
+    return quotes[randint(0, len(quotes) - 1)]
 
 @app.route("/",  methods=["POST","GET"])
 def index():
@@ -15,9 +20,9 @@ def index():
         elif "slide" in flask.request.form:
             controller.slide()
 
-        return flask.render_template("template.html", quote="I love you")
+        return flask.render_template("template.html", quote="choose()")
     else:
-       return flask.render_template("template.html", quote="I love you")
+       return flask.render_template("template.html", quote="choose()")
     
 if __name__ == "__main__":
     app.run(debug=True,  host="0.0.0.0")

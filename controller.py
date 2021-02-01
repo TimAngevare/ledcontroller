@@ -13,7 +13,6 @@ def setcolor(rgb):
 
 def fill(): 
     pixels.fill(color)
-    print("FIll")
 
 def slide():
     while True:
@@ -38,4 +37,3 @@ def slide():
                     pixels[i-1] = (0,0,0)
                     pixels[i-2] = (0,0,0)
         pixels.fill((0,0,0))
-
