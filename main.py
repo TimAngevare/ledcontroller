@@ -2,6 +2,7 @@ import flask
 import board
 import controller
 from random import randint
+import bot
 
 app = flask.Flask(__name__)
 
@@ -25,4 +26,5 @@ def index():
        return flask.render_template("template.html", quote=choose())
     
 if __name__ == "__main__":
+    bot.init()
     app.run(debug=True,  host="0.0.0.0")

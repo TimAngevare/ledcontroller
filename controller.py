@@ -14,6 +14,14 @@ def setcolor(rgb):
 def fill(): 
     pixels.fill(color)
 
+def pulse(color):
+    while True:
+        pixels.fill(color)
+        sleep(1.5)
+        pixels.fill((0,0,0))
+        sleep(1.5)
+
+
 def slide():
     while True:
         x = 239
