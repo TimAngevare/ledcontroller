@@ -1,6 +1,9 @@
 import board
 import neopixel
 from time import sleep
+import sys
+
+conditional = True
 
 pixels = neopixel.NeoPixel(board.D18, 240)
 
@@ -8,14 +11,18 @@ color = ()
 
 def setcolor(rgb):
     global color
-    print(rgb)
     color = rgb
 
 def fill(): 
     pixels.fill(color)
 
+def gone():
+    print("running")
+    conditional = False
+    pixels.fill((0,0,0))
+
 def pulse(color):
-    while True:
+    for i in range(10):
         pixels.fill(color)
         sleep(1.5)
         pixels.fill((0,0,0))
@@ -23,7 +30,8 @@ def pulse(color):
 
 
 def slide():
-    while True:
+    conditional = True
+    while conditional == True:
         x = 239
         while x > 0:
             for i in range(x):
