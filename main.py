@@ -14,7 +14,8 @@ def index():
     if flask.request.method == "POST":
         if "nm" in flask.request.form:
             h = flask.request.form["nm"].lstrip("#")
-            controller.setcolor(tuple(int(h[i:i+2], 16) for i in (0, 2, 4)))
+            brightness = flask.request.form["slider"]
+            controller.setcolor(tuple(int(h[i:i+2], 16) for i in (0, 2, 4)), int(brightness))
         elif "fill" in flask.request.form:
             controller.gone()
             controller.fill()
