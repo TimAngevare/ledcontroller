@@ -36,6 +36,8 @@
 .selector {
     position: relative;
     top: 400px;
+    width: 130%;
+    height: auto;
 }
 .dropbtn {
     position: relative;
@@ -56,8 +58,9 @@
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #2C363F;
+    background-color: #4a4f53;
     min-width: 160px;
+    border-radius: 10%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
