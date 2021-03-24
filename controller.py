@@ -13,7 +13,7 @@ color1 = ()
 def setcolor(rgb, brightness):
     global color1
     bright = brightness / 100
-    color1 = tuple(int(rgb[0] * bright),  int(rgb[1] * bright),  int(rgb[2] * bright))
+    color1 = (int(rgb[0] * bright),  int(rgb[1] * bright),  int(rgb[2] * bright))
 
 def fill(): 
     pixels.fill(color1)
