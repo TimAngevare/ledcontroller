@@ -30,6 +30,14 @@ def pulse(color1):
         pixels.fill((0,0,0))
         sleep(1.5)
 
+def pulser():
+    conditional = True
+    while conditional == True:
+        pixels.fill(color1)
+        sleep(1.5)
+        pixels.fill((0,0,0))
+        sleep(1.5)
+
 
 def slide():
     conditional = True

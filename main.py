@@ -10,10 +10,12 @@ def choose():
     return quotes[randint(0, len(quotes) - 1)]
 
 @app.route("/",  methods=["POST","GET"])
+
 def index():
     if flask.request.method == "POST":
         if "nm" in flask.request.form:
             h = flask.request.form["nm"].lstrip("#")
+            print(h)
             brightness = flask.request.form["slider"]
             print(brightness)
             controller.setcolor(tuple(int(h[i:i+2], 16) for i in (0, 2, 4)), int(brightness))
@@ -23,6 +25,9 @@ def index():
         elif "slide" in flask.request.form:
             controller.gone()
             controller.slide()
+        elif "pulse" in flask.request.form:
+            controller.gone()
+            controller.pulser()
 
         return flask.render_template("template.html", quote=choose())
     else:
