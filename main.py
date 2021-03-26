@@ -1,12 +1,13 @@
 import flask
 import board
+import bot
 import controller
 from random import randint
 
 app = flask.Flask(__name__)
 
 def choose():
-    quotes = ["I love you", "you're cute", "My lover", "I need you", "I love you more", "Hey gorgeous",  "Hey beautifull", "Looking good!", "#1F496"]
+    quotes = ["I love you", "you're cute", "My lover", "I need you", "I love you more", "Hey gorgeous",  "Hey beautifull", "Looking good!", "You're loved", "Mwah", "Hey bby"]
     return quotes[randint(0, len(quotes) - 1)]
 
 @app.route("/",  methods=["POST","GET"])
@@ -22,9 +23,9 @@ def index():
         elif "fill" in flask.request.form:
             controller.gone()
             controller.fill()
-        elif "slide" in flask.request.form:
+        elif "stack" in flask.request.form:
             controller.gone()
-            controller.slide()
+            controller.stack()
         elif "pulse" in flask.request.form:
             controller.gone()
             controller.pulser()
