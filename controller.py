@@ -3,11 +3,11 @@ import neopixel
 from time import sleep
 from numpy import subtract, add
 
-global conditional
+conditional = True
 
 pixels = neopixel.NeoPixel(board.D18, 240)
 
-color1 = ()
+color1 = (0,0,0)
 
 def setcolor(rgb, brightness):
     global color1
@@ -19,6 +19,7 @@ def fill():
     pixels.fill(color1)
 
 def gone():
+    global conditional
     print("running")
     conditional = False
     pixels.fill((0,0,0))
@@ -31,21 +32,37 @@ def pulse(color1):
         sleep(1.5)
 
 def pulser():
+    global conditional
     conditional = True
+    global bright
     while conditional == True:
         pixels.fill(color1)
         tempcolor = color1
-        for x in range(bright*10):
-            tempcolor = subtract(tempcolor, 10)
+        newbright = bright
+        for x in range(int(bright*99)):
+            newbright -= 0.01
+            tempcolor = (int(color1[0] * newbright),  int(color1[1] * newbright),  int(color1[2] * newbright))
             pixels.fill(tempcolor)
-            sleep(0.3)
-        for x in range(bright*10):
-            tempcolor = add(tempcolor, 10)
+            sleep(0.07)
+        for x in range(int(bright*100)):
+            newbright += 0.01
+            tempcolor = (int(color1[0] * newbright),  int(color1[1] * newbright),  int(color1[2] * newbright))
             pixels.fill(tempcolor)
-            sleep(0.3)
-
+            sleep(0.07)
+            
+def slide():
+    global conditional
+    conditional = True
+    while conditional == True:
+        for i in range(239):
+            pixels[i] = color1
+            for x in range(10):
+                pixels[i + x] = (Sint(color1[0] * (bright - x / 10)),  int(color1[1] * (bright - x / 10)),  int(color1[2] * (bright - x / 10)))
+                pixels[i - x] = pixels[i + x]
+            sleep(0.25)
 
 def stack():
+    global conditional
     conditional = True
     while conditional == True:
         x = 239

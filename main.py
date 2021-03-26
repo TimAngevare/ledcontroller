@@ -1,6 +1,6 @@
 import flask
 import board
-import bot
+#import bot
 import controller
 from random import randint
 
@@ -29,6 +29,9 @@ def index():
         elif "pulse" in flask.request.form:
             controller.gone()
             controller.pulser()
+        elif "slide" in flask.request.form:
+            controller.gone()
+            controller.slide()
 
         return flask.render_template("template.html", quote=choose())
     else:
