@@ -20,7 +20,6 @@ def fill():
 
 def gone():
     global conditional
-    print("running")
     conditional = False
     pixels.fill((0,0,0))
 
@@ -54,12 +53,12 @@ def slide():
     global conditional
     conditional = True
     while conditional == True:
-        for i in range(239):
+        for i in range(229):
+            pixels[i-11] = (0,0,0)
             pixels[i] = color1
             for x in range(10):
-                pixels[i + x] = (Sint(color1[0] * (bright - x / 10)),  int(color1[1] * (bright - x / 10)),  int(color1[2] * (bright - x / 10)))
-                pixels[i - x] = pixels[i + x]
-            sleep(0.25)
+                pixels[i-x] = pixels[i+x] = color1 
+            sleep(0.01)
 
 def stack():
     global conditional

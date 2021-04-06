@@ -19,7 +19,7 @@ def happy(update, context):
     controller.pulse((26,38,18))
 
 def love(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id,text="sending megan happy tim...")
+    context.bot.send_message(chat_id=update.effective_chat.id,text="sending megan lovely tim...")
     controller.pulse((255,63,158))
 
 def stopping(update, context):
