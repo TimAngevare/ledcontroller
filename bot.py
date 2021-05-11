@@ -4,7 +4,7 @@ import controller
 
 
 # Telegram bot
-updater = Updater(token='1419433214:AAE1U9AIS2zfCE2PS8JHLcHkV3K41s-E6H0', use_context=True)
+updater = Updater(token='', use_context=True)
 dispatcher = updater.dispatcher
 
 def start(update, context):
